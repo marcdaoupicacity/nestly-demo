@@ -1,0 +1,4 @@
+@import "tailwindcss";
+@theme { --color-brand: #e11d48; --color-brand-dark: #be123c; }
+body { @apply text-neutral-900 antialiased; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
+.no-scrollbar::-webkit-scrollbar { display: none; } .no-scrollbar { scrollbar-width: none; }
