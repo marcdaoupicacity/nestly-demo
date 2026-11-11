@@ -9,6 +9,10 @@ export type BookingStatus = 'pending' | 'paid' | 'cancelled'
 export interface Booking {
   id: string; listing_id: string; user_id: string; check_in: string; check_out: string; guests: number
   total_price: number; status: BookingStatus; stripe_session_id: string | null; created_at: string
-  listings?: Listing | null
+  listings?: Listing | null; reviews?: { id: string; rating: number } | { id: string; rating: number }[] | null
 }
 export interface Profile { id: string; full_name: string | null; avatar_url: string | null }
+export interface Review {
+  id: string; booking_id: string; listing_id: string; user_id: string; rating: number; comment: string; created_at: string
+  profiles?: { full_name: string | null }
+}

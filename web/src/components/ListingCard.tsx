@@ -22,7 +22,7 @@ export default function ListingCard({ listing }: { listing: Listing }) {
     </div>
     <div className="mt-3 flex justify-between gap-2 text-[15px]">
       <h3 className="truncate font-semibold">{listing.location}, {listing.country}</h3>
-      <span className="flex shrink-0 items-center gap-1"><Star className="h-3.5 w-3.5 fill-current" />{Number(listing.rating).toFixed(2)}</span>
+      <span className="flex shrink-0 items-center gap-1"><Star className="h-3.5 w-3.5 fill-current" />{listing.rating ? Number(listing.rating).toFixed(2) : 'New'}</span>
     </div>
     <p className="truncate text-[15px] text-neutral-500">{listing.title}</p>
     <p className="mt-1 text-[15px]"><span className="font-semibold">${listing.price_per_night}</span> night</p>
