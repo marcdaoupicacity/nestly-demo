@@ -20,3 +20,10 @@ Wrote: plan.md (2c41f42), code (WP1 db, WP2 write path, WP3 read path), PR #1
 Commit: fd3bc6a
 Summary: 3 implementers in parallel on disjoint files; integrated, build+lint clean, code-reviewer APPROVE (non-blocking fixes applied: exact review count, embed typing). PR https://github.com/marcdaoupicacity/nestly-demo/pull/1
 Next: test — reads spec.md + plan.md, writes test-report.md
+
+## test — 2026-11-11T00:19:00Z
+Read: intent.md, spec.md, plan.md, HANDOFF.md
+Wrote: test-report.md, screens/*.png
+Commit: 97684a8
+Summary: build + lint PASS (6 baseline warnings), no unit runner. Playwright smoke PASS on home cards, listing #reviews section + anchor scroll (graceful "No reviews yet" with expected 404 on missing reviews table), /trips logged-out prompt. DB-dependent SC3/SC4/SC6 and data parts of SC1/SC5 deferred by user to post-migration SQL checks; SC2 not verified (no login).
+Next: deploy — apply migration, then run scrum5_reviews_rls.sql + advisors and recheck listing page for the 404
