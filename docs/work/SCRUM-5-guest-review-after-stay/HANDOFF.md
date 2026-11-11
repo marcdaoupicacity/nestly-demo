@@ -27,3 +27,10 @@ Wrote: test-report.md, screens/*.png
 Commit: 97684a8
 Summary: build + lint PASS (6 baseline warnings), no unit runner. Playwright smoke PASS on home cards, listing #reviews section + anchor scroll (graceful "No reviews yet" with expected 404 on missing reviews table), /trips logged-out prompt. DB-dependent SC3/SC4/SC6 and data parts of SC1/SC5 deferred by user to post-migration SQL checks; SC2 not verified (no login).
 Next: deploy — apply migration, then run scrum5_reviews_rls.sql + advisors and recheck listing page for the 404
+
+## deploy — 2026-11-11T00:20:54Z
+Read: test-report.md, plan.md
+Wrote: deploy-log.md
+Commit: e5d161e
+Summary: Migration reviews applied to staybnb-demo; RLS checks (a)-(f) all PASS; advisors clean except new INFO unindexed FK reviews.user_id. Vercel production https://nestly-demo.vercel.app (dpl_BKzJzhCvQeEtfQZzjLKoerCmCsgU) READY, reviews endpoint 200.
+Next: maintain (reads deploy-log.md)
