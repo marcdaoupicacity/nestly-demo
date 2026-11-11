@@ -1,1 +1,1 @@
-{"jira_key":"SCRUM-5","stage":"plan","branch":"feat/SCRUM-5-guest-review-after-stay","pr_url":null,"figma_url":null,"deploy":{"vercel_url":null,"supabase_migrations":[],"supabase_functions":[]},"updated":"2026-11-11T00:04:21Z"}
+{"jira_key": "SCRUM-5", "stage": "design", "branch": "feat/SCRUM-5-guest-review-after-stay", "pr_url": null, "figma_url": "https://www.figma.com/design/d3FvJD9PjvxRRUqAnxD5c0", "deploy": {"vercel_url": null, "supabase_migrations": [], "supabase_functions": []}, "updated": "2026-11-11T00:10:49Z"}
