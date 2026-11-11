@@ -1,0 +1,17 @@
+{
+  "jira_key": "SCRUM-5",
+  "stage": "maintain",
+  "branch": "feat/SCRUM-5-guest-review-after-stay",
+  "pr_url": "https://github.com/marcdaoupicacity/nestly-demo/pull/1",
+  "figma_url": "https://www.figma.com/design/d3FvJD9PjvxRRUqAnxD5c0",
+  "deploy": {
+    "vercel_url": "https://nestly-demo.vercel.app",
+    "vercel_preview_url": "https://nestly-demo-fs8mx7hme-marc-daous-projects.vercel.app",
+    "vercel_deployment_id": "dpl_BKzJzhCvQeEtfQZzjLKoerCmCsgU",
+    "supabase_migrations": [
+      "20261111120000_reviews"
+    ],
+    "supabase_functions": []
+  },
+  "updated": "2026-11-11T00:20:54Z"
+}

@@ -8,6 +8,7 @@ import { nightsBetween, priceBreakdown, usd } from '../lib/pricing'
 import { useAuth } from '../context/AuthContext'
 import { useWishlist } from '../context/WishlistContext'
 import { useToast } from '../context/ToastContext'
+import ReviewList from '../components/ReviewList'
 const fmt = (d: Date) => format(d, 'yyyy-MM-dd')
 export default function ListingDetail() {
   const { id } = useParams<{ id: string }>(); const { user, openAuth } = useAuth(); const { ids, toggle } = useWishlist(); const toast = useToast()
@@ -38,7 +39,7 @@ export default function ListingDetail() {
   return <main className="mx-auto max-w-6xl px-4 py-6 sm:px-8">
     <h1 className="text-2xl font-semibold sm:text-3xl">{listing.title}</h1>
     <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-sm">
-      <div className="flex items-center gap-1 font-medium"><Star className="h-4 w-4 fill-current" />{Number(listing.rating).toFixed(2)} · <span className="underline">{listing.review_count} reviews</span> · <span className="underline">{listing.location}, {listing.country}</span></div>
+      <div className="flex items-center gap-1 font-medium"><Star className="h-4 w-4 fill-current" />{listing.rating ? Number(listing.rating).toFixed(2) : 'New'} · <a href="#reviews" className="underline">{listing.review_count ?? 0} reviews</a> · <span className="underline">{listing.location}, {listing.country}</span></div>
       <div className="flex gap-2">
         <button onClick={share} className="flex items-center gap-2 rounded-lg px-3 py-2 font-medium underline hover:bg-neutral-100"><Share className="h-4 w-4" />Share</button>
         <button onClick={() => toggle(listing.id)} className="flex items-center gap-2 rounded-lg px-3 py-2 font-medium underline hover:bg-neutral-100"><Heart className={`h-4 w-4 ${saved ? 'fill-brand text-brand' : ''}`} />{saved ? 'Saved' : 'Save'}</button>
@@ -57,6 +58,7 @@ export default function ListingDetail() {
         <p className="whitespace-pre-line border-b border-neutral-200 py-8 leading-relaxed text-neutral-700">{listing.description}</p>
         <div className="border-b border-neutral-200 py-8"><h2 className="mb-4 text-xl font-semibold">What this place offers</h2>
           <ul className="grid gap-3 sm:grid-cols-2">{listing.amenities.map(a => <li key={a} className="flex items-center gap-3"><Check className="h-5 w-5" />{a}</li>)}</ul></div>
+        <ReviewList listingId={listing.id} rating={listing.rating} reviewCount={listing.review_count} />
         <div className="py-8"><h2 className="mb-4 flex items-center gap-2 text-xl font-semibold"><MapPin className="h-5 w-5" />Where you'll be</h2>
           <iframe title="Map" src={osm} className="h-80 w-full rounded-2xl border-0" loading="lazy" />
           <p className="mt-3 font-medium">{listing.location}, {listing.country}</p></div>
