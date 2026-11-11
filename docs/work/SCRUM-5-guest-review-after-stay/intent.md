@@ -21,8 +21,8 @@ Nestly shows a rating and review count on every listing, but they are hardcoded 
 - Reviews are inserted by the client under RLS; no new edge function.
 - **Security prerequisite (in scope):** the existing `bookings insert own` policy lets a guest insert a booking already marked `paid` with a past check-out, which would bypass the review gate. The migration must restrict client inserts to `status = 'pending'` (or drop the policy; only `create-checkout`, which uses the service role, inserts bookings).
 - Seeded ratings must not be wiped: keep seed values as a baseline (`base_rating`, `base_review_count`) and combine them with real reviews (recommended option A).
-- OPEN: Confirm option A (seed baseline + real reviews) vs. resetting ratings to real reviews only.
-- OPEN: Reviews are not editable/deletable by guests in v1 — confirm.
+- DECIDED (human, accepted): option A — seed baseline + real reviews.
+- DECIDED (human, accepted): reviews are not editable/deletable in v1.
 
 ## Non-goals
 - Host replies to reviews, review moderation, photos in reviews.
